@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    double x1, y1, r1, x2, y2, r2;
+    scanf("%lf %lf %lf %lf %lf %lf", &x1, &y1, &r1, &x2, &y2, &r2);
+
+    double dx = x1 - x2;
+    double dy = y1 - y2;
+    double d2 = dx * dx + dy * dy;
+    double sum = r1 + r2;
+    double dif = r1 - r2;
+    if (dif < 0) dif = -dif;
+
+    if (d2 == 0 && r1 == r2)
+        printf("-1");
+    else if (d2 > sum * sum || d2 < dif * dif)
+        printf("0");
+    else if (d2 == sum * sum || d2 == dif * dif)
+        printf("1");
+    else
+        printf("2");
+
+    return 0;
+}
