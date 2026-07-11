@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int p;
+    scanf("%d", &p);
+
+    if (p == 1) {
+        printf("2");
+        return 0;
+    }
+
+    long long a = 1, b = 0;
+
+    for (int i = 2; i <= p; i++) {
+        long long na = a + b;
+        long long nb = a;
+        a = na;
+        b = nb;
+    }
+
+    printf("%lld", 2 * (a + b));
+
+    return 0;
+}
